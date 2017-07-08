@@ -1,0 +1,82 @@
+<section class="secondary-nav container-fluid single-header">
+    <div class="container">
+        <div class="row secondary-nav-details">
+        
+            <div class="col-xs-5">
+                <a ng-href="http://{{siteUrl}}/{{lang}}products/#/products/" class="goback">
+                  <img src="http://{{siteUrl}}/wp-content/themes/binekhi/image/arrow_back.svg" alt="">
+                </a>
+            </div>
+            <div class="col-xs-14">
+                <h1 ng-hide="product.id === undefined">{{product.title}}</h1>
+                <h1 ng-show="product.id === undefined">Loading...</h1>
+            </div>
+            <div class="col-xs-5" ng-hide="product.id === undefined">
+                <a ng-href="{{product.prevpostid == false ? '' : 'http://'+siteUrl+'/'+lang+'products/#/item/'+product.prevpostid+'/'}}" ng-disabled="product.prevpostid == false" class="prev nextpost" ng-class="{'disabled': product.prevpostid == false}">
+                  <img src="http://{{siteUrl}}/wp-content/themes/binekhi/image/arrow_left.svg" alt=""></a>
+                
+                <a ng-href="{{product.nextpostid == false ? '' : 'http://'+siteUrl+'/'+lang+'products/#/item/'+product.nextpostid+'/'}}" ng-disabled="product.nextpostid == false" class="next nextpost" ng-class="{'disabled': product.nextpostid == false}">
+                  <img src="http://{{siteUrl}}/wp-content/themes/binekhi/image/arrow_right.svg" alt=""></a>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="product-details container">
+
+    <div class="row" ng-hide="product.id === undefined">
+        <div class="details-cover col-xs-24 col-sm-8 cover">
+          <a class="maintype" data-img_url="{{product.mainimageurl}}" style="display: none"></a>
+          <img ng-src="{{product.mainimageurl}}" class="img-responsive" alt="">
+        </div>
+        <div class="details-info col-xs-24 col-sm-16">
+            <ul class="list-unstyled">
+                <li><h3>BINEKHI</h3></li>
+                <li><p>{{product.title}}</p></li>
+            </ul>
+
+            <div class="specifications" ng-hide="specifications==''">
+              <h3>{{product.specifications_title}}</h3>
+              <div ng-bind-html="product.specifications"></div>
+              <p>&nbsp;</p>
+            </div>
+            
+            <div class="specifications" ng-hide="awards==''">
+              <h3>{{product.awards_title}}</h3>
+              <div ng-bind-html="product.awards"></div>
+              <p>&nbsp;</p>
+            </div>
+            
+            <button class="gs-btn-black othertype" ng-hide="product.otherimageurl==''" data-img_url="{{product.otherimageurl}}">{{product.otherimagetitle}}</button>
+
+        </div>
+    </div>
+    <div class="row" ng-show="product.id === undefined">
+        <div class="col-xs-24">
+          <p><center>Please wait...</center></p>
+        </div>
+    </div>
+
+</section>
+
+<section class="great-with container" ng-hide="product.id === undefined">
+
+  <div class="row great-with-title">
+
+      <h2>{{product.great_with_title_1}}</h2>
+      <h3>{{product.great_with_title_2}}</h3>
+
+  </div>
+
+  <div class="row great-with-content">
+      <div ng-repeat="food in product.great_with" ng-class='{"col-xs-24 col-sm-8":$first, "col-xs-12 col-sm-8": $index >= 1}'>
+          <img ng-src="{{food.image}}" alt="Great with">
+          <h3>{{food.title}}</h3>
+      </div>
+  </div>
+
+</section>

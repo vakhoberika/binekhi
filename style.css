@@ -1,0 +1,53 @@
+/*
+Theme Name: Binekhi2
+Theme URI: https://binekhi.ge/
+Author: the Binekhi team
+Author URI: https://binekhi.ge/
+Description: Binekhi wp Theme
+Version: 0.1
+License: 
+License URI: http://binekhi.ge/
+Tags: binekhi, wine, shop, kakheti, RED, WHITE, ROSE, ORANGE, SHERRY, CHACHA
+Text Domain: binekhi
+
+*/
+.my-resized-recaptcha,
+.my-resized-recaptcha div,
+.my-resized-recaptcha div div {
+	width: 100% !important;
+	/* *
+	transform: scale(0.66);
+	-webkit-transform:scale(0.66);
+	transform-origin:0 0;
+	-webkit-transform-origin:0 0;
+	/* */
+}
+
+div.wpcf7-response-output {
+	margin: 0;
+    padding: 1em;    
+    -webkit-border-radius: 3px;
+    -khtml-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    border-radius: 3px;
+}
+
+.specifications p {
+    color: #000000;
+    font-size: 18px;
+    font-weight: 300;
+    font-family: 'Open Sans', sans-serif;
+    line-height: 24px;
+}
+
+.specifications h3 {
+    color: #000000;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: 'Open Sans', sans-serif;
+    line-height: 18px;
+    letter-spacing: 3px;
+    margin-bottom: 5px;
+}
